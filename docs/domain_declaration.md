@@ -17,7 +17,7 @@ Each element of D is a VectorNodeField1D:
 | 2     | humidity_pct | %    | relh |
 | 3     | wind_u_kt    | kt   | -sknt * sin(drct) |
 | 4     | wind_v_kt    | kt   | -sknt * cos(drct) |
-| 5     | precip_mm    | mm   | p01i * 25.4 |
+| 5     | dewpoint_c   | °C   | dwpf → (F-32)*5/9 |
 
 ### Wind Direction Transformation
 
@@ -25,6 +25,22 @@ Declared within M. Transforms (speed, direction) to (u, v).
 
 Preserved: wind speed magnitude, direction information, linear differentiability.
 Discarded: circular angular representation.
+
+### Dewpoint Replaces Precipitation
+
+Precipitation is a threshold event downstream of the relational
+structure between temperature, moisture, and pressure — not a
+continuous relational variable. When zero (most timesteps in most
+locations), it contributes a dead channel with zero relational
+variance across all component pairs involving it.
+
+Dewpoint is continuously varying, directly measured (METAR dwpf),
+and its relational position relative to temperature and humidity
+encodes the thermodynamic structure that determines precipitation
+potential. The T-Td spread across the station network encodes
+moisture availability; dewpoint gradients encode moisture transport;
+dewpoint-pressure coupling encodes the thermodynamic conditions
+for convection and frontal lift.
 
 ## Operator Topologies (internal to E)
 
@@ -66,6 +82,32 @@ statistical scaling is applied.
 
 Admissible pre-A: uniform shift (unit choice), uniform
 scaling (unit choice). All applied within M.
+
+### Declared Unit Scaling
+
+Each component is divided by a declared characteristic
+magnitude within M to bring all components to O(1) scale.
+This is a uniform scaling per component: T(x) = x / s.
+
+Admissible because it does not alter pairwise difference
+RATIOS within a component: (x[i]-x[j])/s = (x[i]/s - x[j]/s).
+
+| Component    | Scale (s) | Rationale |
+|-------------|-----------|-----------|
+| temp_c       | 30.0      | ~30°C range across network |
+| pressure_hpa | 15.0      | ~15 hPa range across network |
+| humidity_pct | 100.0     | full 0-100% range |
+| wind_u_kt    | 40.0      | ~40 kt range |
+| wind_v_kt    | 40.0      | ~40 kt range |
+| dewpoint_c   | 30.0      | ~30°C range across network |
+
+Preserved: relational structure within each component,
+  cross-component magnitude comparability.
+Discarded: raw unit-dependent magnitudes.
+
+These scales are declared by Origin, not computed from data.
+They are physical characteristic magnitudes for the declared
+region and season.
 
 ## Declared Open Conditions
 
