@@ -1,0 +1,51 @@
+{
+  "phase": "3",
+  "description": "Null test \u2014 synthetic white noise",
+  "parameters": {
+    "rho_base": 0.1,
+    "edge_threshold_km": 150.0,
+    "n_trials": 10,
+    "n_stations": 76,
+    "n_spatial_edges_undirected": 477
+  },
+  "comp_stats": [
+    {
+      "component": "temp_c",
+      "mean": 0.6071120460678683,
+      "std": 0.2067788008792488,
+      "n_values": 1743
+    },
+    {
+      "component": "pressure_hpa",
+      "mean": 67.45781985083184,
+      "std": 0.28717814059024616,
+      "n_values": 1743
+    },
+    {
+      "component": "humidity_pct",
+      "mean": 0.5203563396442908,
+      "std": 0.25112592106643816,
+      "n_values": 1743
+    },
+    {
+      "component": "wind_u_kt",
+      "mean": 0.11362436507080012,
+      "std": 0.16038863615081406,
+      "n_values": 1743
+    },
+    {
+      "component": "wind_v_kt",
+      "mean": -0.059259576029768966,
+      "std": 0.1948548048546285,
+      "n_values": 1743
+    },
+    {
+      "component": "dewpoint_c",
+      "mean": 0.20061197169630982,
+      "std": 0.20231380446199598,
+      "n_values": 1743
+    }
+  ],
+  "declaration": "Synthetic data preserves marginal distribution (variance per component, post-scaling) while destroying relational arrangement across stations. By Theorem 1 (Object Error), index-local operators produce identical output on this data and on real data with the same marginals. \u0393 > 0 on real data and \u0393 \u2248 0 on synthetic data confirms \u0393 measures relational arrangement, not marginal properties.",
+  "preprocessing_applied": "No interpolation, gridding, spectral projection, or smoothing applied prior to operator A. Pre-A steps within M: topology declaration (proximity graph from real station positions), unit scaling (declared COMPONENT_SCALES). Synthetic data uses same scaled marginals. No NaN values in synthetic data."
+}
