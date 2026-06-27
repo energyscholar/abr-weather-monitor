@@ -12,3 +12,4 @@ data/processed/*
 !data/processed/.gitkeep
 .env
 *.log
+# data/predictions.jsonl — tracked: committed by hourly workflow

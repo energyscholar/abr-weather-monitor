@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>ABR Weather Monitor</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+      background: #f5f6f7;
+    }
+    .header {
+      background: #1a1a2e;
+      color: #fff;
+      padding: 2em 1.5em;
+      text-align: center;
+    }
+    .header h1 {
+      margin: 0 0 0.3em;
+      font-size: 1.6em;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+    .header .subtitle {
+      margin: 0 0 1em;
+      font-size: 0.95em;
+      color: #a0a0c0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .header .meta {
+      font-size: 0.82em;
+      color: #8888aa;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1.5em 1em;
+    }
+    .section {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      padding: 1.2em 1.5em;
+      margin-bottom: 1.2em;
+    }
+    .section h2 {
+      margin: 0 0 0.8em;
+      font-size: 1.1em;
+      font-weight: 600;
+      color: #1a1a2e;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 0.5em;
+    }
+    .current-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1em;
+    }
+    .current-item {
+      text-align: center;
+    }
+    .current-value {
+      font-size: 1.3em;
+      font-weight: 700;
+      color: #1a1a2e;
+      font-variant-numeric: tabular-nums;
+    }
+    .current-label {
+      font-size: 0.8em;
+      color: #888;
+      margin-top: 0.2em;
+    }
+    .sparkline-container {
+      padding: 0.5em 0;
+    }
+    .sparkline-legend {
+      display: flex;
+      gap: 1.5em;
+      font-size: 0.78em;
+      color: #666;
+      margin-top: 0.3em;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4em;
+    }
+    .legend-line {
+      display: inline-block;
+      width: 18px;
+      height: 2px;
+    }
+    .legend-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88em;
+    }
+    .data-table th {
+      text-align: left;
+      padding: 0.5em 0.7em;
+      border-bottom: 2px solid #e0e0e0;
+      color: #555;
+      font-weight: 600;
+      font-size: 0.9em;
+    }
+    .data-table td {
+      padding: 0.45em 0.7em;
+      border-bottom: 1px solid #f0f0f0;
+      font-variant-numeric: tabular-nums;
+    }
+    .data-table code {
+      font-size: 0.85em;
+      background: #f5f5f5;
+      padding: 0.15em 0.4em;
+      border-radius: 3px;
+    }
+    .row-hit { background: #eafaf1; }
+    .row-false-alarm { background: #fdedec; }
+    .row-calibration { background: #f8f9fa; color: #999; }
+    .status-hit { color: #27ae60; font-weight: 600; }
+    .status-false_alarm { color: #e74c3c; font-weight: 600; }
+    .status-miss { color: #f39c12; font-weight: 600; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.8em;
+      margin-bottom: 1em;
+    }
+    .stat-card {
+      text-align: center;
+      padding: 0.8em;
+      background: #f8f9fa;
+      border-radius: 6px;
+      border: 1px solid #eee;
+    }
+    .stat-value {
+      font-size: 1.5em;
+      font-weight: 700;
+      color: #1a1a2e;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-label {
+      font-size: 0.78em;
+      color: #888;
+      margin-top: 0.2em;
+    }
+    .stats-detail {
+      font-size: 0.85em;
+      color: #666;
+    }
+    .histogram-container {
+      margin-top: 0.8em;
+    }
+    .chart-label {
+      font-size: 0.82em;
+      color: #888;
+      margin-bottom: 0.3em;
+    }
+    .notice {
+      padding: 0.8em 1em;
+      border-radius: 5px;
+      margin-bottom: 1em;
+      font-size: 0.9em;
+    }
+    .notice-calibration {
+      background: #fef9e7;
+      border: 1px solid #f9e79f;
+      color: #7d6608;
+    }
+    .empty-state {
+      color: #888;
+      font-style: italic;
+      padding: 0.5em 0;
+    }
+    details {
+      border: 1px solid #e0e0e0;
+      border-radius: 6px;
+      background: #fff;
+      margin-bottom: 1.2em;
+    }
+    details summary {
+      padding: 0.8em 1.2em;
+      cursor: pointer;
+      font-weight: 600;
+      color: #1a1a2e;
+      font-size: 0.95em;
+    }
+    details summary:hover {
+      background: #f8f9fa;
+    }
+    details .details-content {
+      padding: 0 1.2em 1.2em;
+      font-size: 0.9em;
+      color: #555;
+      line-height: 1.6;
+    }
+    .footer {
+      text-align: center;
+      padding: 1.5em;
+      font-size: 0.78em;
+      color: #999;
+      border-top: 1px solid #e0e0e0;
+      margin-top: 1em;
+    }
+    @media (max-width: 600px) {
+      .header { padding: 1.5em 1em; }
+      .header h1 { font-size: 1.3em; }
+      .container { padding: 1em 0.5em; }
+      .section { padding: 1em; }
+      .current-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .data-table { font-size: 0.8em; }
+      .data-table th, .data-table td { padding: 0.35em 0.4em; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+  <h1>ABR Weather Monitor &mdash; Live Predictions</h1>
+  <p class="subtitle">Relational operators detect structural weather transitions
+    before conventional indices</p>
+  <p class="meta">Last updated: 2026-06-27 18:36:22 UTC &middot; <span style="display:inline-block;padding:4px 12px;background:#fef9e7;color:#f39c12;border:1px solid #f39c12;border-radius:12px;font-weight:600;font-size:0.85em;letter-spacing:0.5px;">CALIBRATING</span></p>
+</header>
+
+<div class="container">
+
+  <div class="notice notice-calibration">CALIBRATION PERIOD &mdash; predictions are logged but not counted toward performance statistics. Calibration config: k=1.5, B=normalized, gate=BORDERLINE.</div>
+
+  <div class="section">
+    <h2>Current State</h2>
+    <div class="current-grid">
+      <div class="current-item">
+        <div class="current-value">+0.0185</div>
+        <div class="current-label">&Delta;&Gamma; (normalized)</div>
+      </div>
+      <div class="current-item">
+        <div class="current-value">+3739</div>
+        <div class="current-label">&Delta;&Gamma; (raw)</div>
+      </div>
+      <div class="current-item">
+        <div class="current-value">27</div>
+        <div class="current-label">Stations</div>
+      </div>
+      <div class="current-item">
+        <div class="current-value" id="freshness">1.6h ago</div>
+        <div class="current-label">Data age</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>&Delta;&Gamma; Trend (Last 48 Hours)</h2>
+    <div class="sparkline-container">
+      <svg width="100%" height="80" viewBox="0 0 600 80" preserveAspectRatio="xMidYMid meet" aria-label="DeltaGamma sparkline showing 48 hourly observations. Values range from -0.0554 to 0.0478. 0 prediction(s) marked.">
+<rect x="0" y="0" width="600" height="80" fill="#fafafa" rx="4"/>
+<line x1="10" y1="38.2" x2="590" y2="38.2" stroke="#ddd" stroke-width="1" stroke-dasharray="4,4"/>
+<polyline points="10.0,45.5 22.3,41.8 34.7,24.4 47.0,30.7 59.4,40.3 71.7,33.0 84.0,37.5 96.4,41.3 108.7,60.4 121.1,38.1 133.4,28.7 145.7,36.5 158.1,38.7 170.4,40.5 182.8,53.6 195.1,22.7 207.4,39.6 219.8,38.0 232.1,46.2 244.5,33.2 256.8,31.2 269.1,38.1 281.5,48.6 293.8,15.0 306.2,37.6 318.5,46.7 330.9,35.7 343.2,39.2 355.5,39.7 367.9,38.3 380.2,38.8 392.6,38.1 404.9,34.3 417.2,38.3 429.6,36.0 441.9,65.0 454.3,23.9 466.6,53.5 478.9,25.4 491.3,53.0 503.6,33.2 516.0,36.8 528.3,46.5 540.6,34.1 553.0,28.2 565.3,35.3 577.7,39.1 590.0,29.2" fill="none" stroke="#2980b9" stroke-width="1.5" stroke-linejoin="round" aria-label="DeltaGamma normalized values"/>
+</svg>
+    </div>
+    <div class="sparkline-legend">
+      <span class="legend-item">
+        <span class="legend-line" style="background:#2980b9;"></span>
+        &Delta;&Gamma; normalized
+      </span>
+      <span class="legend-item">
+        <span class="legend-line" style="background:#e74c3c;border-top:1px dashed #e74c3c;height:0;"></span>
+        Threshold
+      </span>
+      <span class="legend-item">
+        <span class="legend-dot" style="background:#e67e22;"></span>
+        Prediction
+      </span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Active Predictions</h2>
+    <p class="empty-state">No active predictions</p>
+  </div>
+
+  <div class="section">
+    <h2>Recent Outcomes</h2>
+    <p class="empty-state">No verified predictions yet &mdash; system is accumulating data</p>
+  </div>
+
+  <div class="section">
+    <h2>Performance</h2>
+    <p class="empty-state">Performance statistics will appear after the calibration period ends and predictions are verified.</p>
+  </div>
+
+  <details>
+    <summary>Methodology</summary>
+    <div class="details-content">
+      <p><strong>ABR relational operators</strong> extract structural transitions
+      from weather station networks. The operator chain A&rarr;B&rarr;R computes
+      a circulation measure &Gamma; (Gamma) from pairwise temperature and pressure
+      differences across stations. &Delta;&Gamma; is the hourly change in &Gamma;.</p>
+
+      <p>When &Delta;&Gamma; exceeds a calibrated threshold (k&sigma; above the
+      rolling baseline), the system emits a <strong>prediction</strong> that a
+      measurable weather transition (pressure swing, temperature shift, wind
+      change) will occur within a 4&ndash;10 hour window.</p>
+
+      <p>Predictions are verified against conventional scalar weather indices.
+      Each prediction is committed to git with a timestamp, creating a tamper-evident
+      record. Verify: <code>git log --oneline data/predictions.jsonl</code></p>
+
+      <p>Built on V4 ABR operators by Robin Macomber / Metatron Dynamics.</p>
+    </div>
+  </details>
+
+  <div class="footer">
+    <p>Data source: Iowa Environmental Mesonet (NOAA ASOS/METAR). Public domain.</p>
+    <p>Last run: 2026-06-27 18:36:22 UTC</p>
+  </div>
+
+</div>
+
+<script>
+// Compute live data freshness
+(function() {
+  var el = document.getElementById('freshness');
+  if (!el) return;
+  var dataTime = '2026-06-27T17:00:00Z';
+  if (!dataTime) return;
+  function update() {
+    var t = new Date(dataTime);
+    var now = new Date();
+    var diffMs = now - t;
+    var diffMin = Math.floor(diffMs / 60000);
+    if (diffMin < 60) {
+      el.textContent = diffMin + 'm ago';
+    } else if (diffMin < 1440) {
+      el.textContent = (diffMin / 60).toFixed(1) + 'h ago';
+    } else {
+      el.textContent = (diffMin / 1440).toFixed(1) + 'd ago';
+    }
+  }
+  update();
+  setInterval(update, 60000);
+})();
+</script>
+
+</body>
+</html>

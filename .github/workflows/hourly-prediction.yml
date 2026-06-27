@@ -1,0 +1,49 @@
+name: ABR Weather Prediction
+
+on:
+  schedule:
+    - cron: '15 * * * *'  # 15 past each hour
+  workflow_dispatch: {}    # manual trigger
+
+jobs:
+  predict:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install numpy
+      - name: Run prediction pipeline
+        run: python run_hourly.py
+      - name: Generate dashboard
+        run: python -m src.dashboard.generate
+      - name: Commit results
+        run: |
+          git config user.name "ABR Weather Bot"
+          git config user.email "actions@github.com"
+          git add data/predictions.jsonl docs/index.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            SUMMARY=$(python3 -c "
+          import json, os
+          path = 'data/predictions.jsonl'
+          if not os.path.exists(path):
+              print('init')
+          else:
+              with open(path) as f:
+                  lines = f.readlines()
+              if not lines:
+                  print('init')
+              else:
+                  last = json.loads(lines[-1])
+                  t = last.get('type', 'obs')
+                  ts = last.get('data_time', '')[:13]
+                  print(f'{ts} {t}')
+          ")
+            git commit -m "prediction: $SUMMARY"
+            git push
+          fi
