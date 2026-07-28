@@ -6482,3 +6482,37 @@
 {"type": "verify", "pred_id": "pred-202607270700-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T18:41:22Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
 {"type": "verify", "pred_id": "pred-202607271800-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T18:41:22Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
 {"type": "verify", "pred_id": "pred-202607280400-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T18:41:22Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "obs", "data_time": "2026-07-28T18:00:00Z", "run_time": "2026-07-28T20:22:57Z", "n_stations": 26, "station_delta": 1, "dg_norm": 0.0020955361212167123, "dg_raw": -677.6757894671173, "threshold_norm": 0.0, "threshold_raw": 0.0, "gamma_norm": 0.1260613125058807, "gamma_raw": 24695.56087205332}
+{"type": "obs", "data_time": "2026-07-28T19:00:00Z", "run_time": "2026-07-28T20:22:57Z", "n_stations": 25, "station_delta": 1, "dg_norm": -0.0021076982128518384, "dg_raw": -479.40402099548373, "threshold_norm": 0.0, "threshold_raw": 0.0, "gamma_norm": 0.12395361429302887, "gamma_raw": 24216.156851057836}
+{"type": "verify", "pred_id": "pred-202606272000-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607011500-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607020300-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607030200-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607041100-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607051000-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607051400-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607060400-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607060500-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607071800-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607072000-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607082100-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607082300-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607091800-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607091800-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607101200-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607101800-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607131000-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607131800-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607141500-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607151600-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607181300-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607181800-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607190100-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607200000-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607221700-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607240500-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607250600-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607261800-ca-socal-normalized", "status": "hit", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "2026-07-27T04:00:00Z", "lead_hours": 10.0, "peak_indices": ["pressure_tendency"]}
+{"type": "verify", "pred_id": "pred-202607270700-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607271800-ca-socal-raw", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
+{"type": "verify", "pred_id": "pred-202607280400-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-07-28T20:22:57Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
