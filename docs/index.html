@@ -450,13 +450,13 @@
   <h1>ABR Weather Monitor</h1>
   <p class="subtitle">A live experiment: can math detect weather changes
     before conventional instruments do?</p>
-  <p class="elevator">30 NOAA weather stations across
+  <p class="elevator">29 NOAA weather stations across
     Southern California, analyzed every hour. Instead of looking at
     individual readings, this system analyzes the <em>relationships
     between stations</em> and watches for the pattern to reorganize.</p>
   <div class="meta">
     <span><span class="status-badge" style="background:#fef9e7;color:#f39c12;border-color:#f39c12;">CALIBRATING</span></span>
-    <span>Last updated: 2026-08-12 11:56:07 UTC</span>
+    <span>Last updated: 2026-08-12 13:41:37 UTC</span>
   </div>
 </header>
 
@@ -470,7 +470,7 @@
   <div class="section explainer">
     <h2>What is this?</h2>
 
-    <p>Every hour, roughly 30 NOAA weather stations
+    <p>Every hour, roughly 29 NOAA weather stations
     across Southern California report temperature, pressure, humidity,
     wind speed, and dewpoint. Conventional weather analysis looks at
     these numbers station by station: "Is LAX getting warmer? Is
@@ -652,18 +652,18 @@
     <h2>Live readings</h2>
     <div class="current-grid">
       <div class="current-item">
-        <div class="current-value">+0.0037</div>
+        <div class="current-value">-0.0076</div>
         <div class="current-label">Relationship change index</div>
         <div class="current-explain">How fast the pattern of station
           relationships is changing right now</div>
       </div>
       <div class="current-item">
-        <div class="current-value">30</div>
+        <div class="current-value">29</div>
         <div class="current-label">Active stations</div>
         <div class="current-explain">NOAA sites reporting this hour</div>
       </div>
       <div class="current-item">
-        <div class="current-value" id="freshness">1h 56m ago</div>
+        <div class="current-value" id="freshness">1h 41m ago</div>
         <div class="current-label">Data age</div>
         <div class="current-explain">Time since last station data</div>
       </div>
@@ -685,7 +685,7 @@
       crosses the red dashed threshold, the system emits a prediction
       (orange dot).</p>
     <div class="sparkline-container">
-      <svg width="100%" height="160" viewBox="0 0 700 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Line chart showing how fast the relationship pattern is changing, measured hourly over the last 48 hours. Values range from -0.0403 to 0.0314. 3 prediction(s) were emitted during this period.">
+      <svg width="100%" height="160" viewBox="0 0 700 160" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Line chart showing how fast the relationship pattern is changing, measured hourly over the last 48 hours. Values range from -0.0403 to 0.0314. 2 prediction(s) were emitted during this period.">
 <rect x="0" y="0" width="700" height="160" fill="#fafafa" rx="4"/>
 <line x1="60" y1="130.0" x2="685" y2="130.0" stroke="#eee" stroke-width="1"/>
 <text x="52" y="133.0" text-anchor="end" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">-0.047</text>
@@ -698,14 +698,13 @@
 <line x1="60" y1="15.0" x2="685" y2="15.0" stroke="#eee" stroke-width="1"/>
 <text x="52" y="18.0" text-anchor="end" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">0.039</text>
 <line x1="60" y1="66.5" x2="685" y2="66.5" stroke="#ccc" stroke-width="1" stroke-dasharray="4,4"/>
-<text x="60" y="155" text-anchor="start" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">08-10 06:00 UTC</text>
-<text x="685" y="155" text-anchor="end" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">08-12 10:00 UTC</text>
-<text x="379.1" y="155" text-anchor="middle" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">08:00</text>
+<text x="60" y="155" text-anchor="start" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">08-10 08:00 UTC</text>
+<text x="685" y="155" text-anchor="end" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">08-12 12:00 UTC</text>
+<text x="379.1" y="155" text-anchor="middle" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif">10:00</text>
 <text x="12" y="72.5" text-anchor="middle" fill="#999" font-size="10" font-family="-apple-system, BlinkMacSystemFont, sans-serif" transform="rotate(-90, 12, 72.5)">Change index</text>
-<polyline points="60.0,73.0 73.3,36.9 86.6,75.0 99.9,76.8 113.2,80.2 126.5,68.2 139.8,73.2 153.1,63.0 166.4,60.2 179.7,52.5 193.0,83.0 206.3,63.1 219.6,61.9 232.9,86.4 246.2,24.6 259.5,76.1 272.8,81.3 286.1,30.5 299.4,56.1 312.7,64.9 326.0,90.1 339.3,72.9 352.6,66.5 365.9,67.1 379.1,66.8 392.4,96.4 405.7,72.7 419.0,71.2 432.3,77.1 445.6,78.3 458.9,66.6 472.2,92.9 485.5,112.4 498.8,120.4 512.1,58.1 525.4,50.0 538.7,97.7 552.0,76.4 565.3,61.8 578.6,62.6 591.9,63.6 605.2,99.3 618.5,62.1 631.8,33.2 645.1,66.5 658.4,66.5 671.7,92.0 685.0,61.6" fill="none" stroke="#2980b9" stroke-width="2" stroke-linejoin="round"/>
-<circle cx="73.3" cy="36.9" r="5" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
-<circle cx="246.2" cy="24.6" r="5" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
-<circle cx="631.8" cy="33.2" r="5" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
+<polyline points="60.0,75.0 73.3,76.8 86.6,80.2 99.9,68.2 113.2,73.2 126.5,63.0 139.8,60.2 153.1,52.5 166.4,83.0 179.7,63.1 193.0,61.9 206.3,86.4 219.6,24.6 232.9,76.1 246.2,81.3 259.5,30.5 272.8,56.1 286.1,64.9 299.4,90.1 312.7,72.9 326.0,66.5 339.3,67.1 352.6,66.8 365.9,96.4 379.1,72.7 392.4,71.2 405.7,77.1 419.0,78.3 432.3,66.6 445.6,92.9 458.9,112.4 472.2,120.4 485.5,58.1 498.8,50.0 512.1,97.7 525.4,76.4 538.7,61.8 552.0,62.6 565.3,63.6 578.6,99.3 591.9,62.1 605.2,33.2 618.5,66.5 631.8,66.5 645.1,92.0 658.4,61.6 671.7,57.2 685.0,76.8" fill="none" stroke="#2980b9" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="219.6" cy="24.6" r="5" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
+<circle cx="605.2" cy="33.2" r="5" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
 </svg>
     </div>
     <div class="sparkline-legend">
@@ -731,25 +730,7 @@
        ============================================================ -->
   <div class="section">
     <h2>Active predictions</h2>
-    
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>When detected</th>
-              <th>How strong</th>
-              <th>Check by</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td><code>pred-202608120300-ca-socal-normalized</code></td><td>2026-08-12T03:00 UTC</td><td>1.0x above normal</td><td>2026-08-12T13:00 UTC</td></tr>
-
-          </tbody>
-        </table>
-        <p class="table-note">The system is claiming that conventional weather
-        instruments across the network will show significant coordinated
-        changes before the "check by" time. After that time, the system will
-        automatically verify whether this happened.</p>
+    <p class="empty-state">No active predictions right now. The system watches continuously and emits a prediction when it detects the station network reorganizing structurally. During calm, stable weather, this can take days or weeks.</p>
   </div>
 
   <!-- ============================================================
@@ -777,8 +758,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr class="row-hit"><td>2026-07-13</td><td>1.2x</td><td><span class="status-false_alarm">False alarm</span></td><td>&mdash;</td></tr>
-<tr class="row-hit"><td>2026-07-13</td><td>1.0x</td><td><span class="status-false_alarm">False alarm</span></td><td>&mdash;</td></tr>
+            <tr class="row-hit"><td>2026-07-13</td><td>1.0x</td><td><span class="status-false_alarm">False alarm</span></td><td>&mdash;</td></tr>
 <tr class="row-hit"><td>2026-07-14</td><td>1.2x</td><td><span class="status-false_alarm">False alarm</span></td><td>&mdash;</td></tr>
 <tr class="row-false-alarm"><td>2026-07-15</td><td>1.0x</td><td><span class="status-false_alarm">False alarm</span></td><td>&mdash;</td></tr>
 <tr class="row-false-alarm"><td>2026-07-18</td><td>1.7x</td><td><span class="status-false_alarm">False alarm</span></td><td>&mdash;</td></tr>
@@ -807,6 +787,7 @@
 <tr class="row-false-alarm"><td>2026-08-09</td><td>1.0x</td><td><span class="status-hit">Confirmed</span></td><td><svg width="320" height="36" viewBox="0 0 320 36" role="img" aria-label="Timeline: ABR detected a structural change 10.0 hours before conventional instruments confirmed it." style="display:block;margin:2px 0;"><rect x="10" y="12" width="300" height="8" fill="#e8e8e8" rx="4"/><rect x="10" y="12" width="300" height="8" fill="#27ae60" rx="4" opacity="0.7"/><circle cx="12" cy="16" r="5" fill="#2980b9" stroke="#fff" stroke-width="1.5"/><circle cx="308" cy="16" r="5" fill="#e74c3c" stroke="#fff" stroke-width="1.5"/><text x="160" y="17" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, sans-serif">10.0h early</text><text x="10" y="34" text-anchor="start" font-size="8" fill="#888" font-family="-apple-system, BlinkMacSystemFont, sans-serif">ABR 05:00</text><text x="310" y="34" text-anchor="end" font-size="8" fill="#888" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Conventional 15:00</text></svg></td></tr>
 <tr class="row-hit"><td>2026-08-10</td><td>1.2x</td><td><span class="status-hit">Confirmed</span></td><td><svg width="320" height="36" viewBox="0 0 320 36" role="img" aria-label="Timeline: ABR detected a structural change 8.0 hours before conventional instruments confirmed it." style="display:block;margin:2px 0;"><rect x="10" y="12" width="300" height="8" fill="#e8e8e8" rx="4"/><rect x="10" y="12" width="300" height="8" fill="#27ae60" rx="4" opacity="0.7"/><circle cx="12" cy="16" r="5" fill="#2980b9" stroke="#fff" stroke-width="1.5"/><circle cx="308" cy="16" r="5" fill="#e74c3c" stroke="#fff" stroke-width="1.5"/><text x="160" y="17" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, sans-serif">8.0h early</text><text x="10" y="34" text-anchor="start" font-size="8" fill="#888" font-family="-apple-system, BlinkMacSystemFont, sans-serif">ABR 07:00</text><text x="310" y="34" text-anchor="end" font-size="8" fill="#888" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Conventional 15:00</text></svg></td></tr>
 <tr class="row-hit"><td>2026-08-10</td><td>1.2x</td><td><span class="status-hit">Confirmed</span></td><td><svg width="320" height="36" viewBox="0 0 320 36" role="img" aria-label="Timeline: ABR detected a structural change 5.0 hours before conventional instruments confirmed it." style="display:block;margin:2px 0;"><rect x="10" y="12" width="300" height="8" fill="#e8e8e8" rx="4"/><rect x="10" y="12" width="300" height="8" fill="#27ae60" rx="4" opacity="0.7"/><circle cx="12" cy="16" r="5" fill="#2980b9" stroke="#fff" stroke-width="1.5"/><circle cx="308" cy="16" r="5" fill="#e74c3c" stroke="#fff" stroke-width="1.5"/><text x="160" y="17" text-anchor="middle" dominant-baseline="central" font-size="10" font-weight="700" fill="#fff" font-family="-apple-system, BlinkMacSystemFont, sans-serif">5.0h early</text><text x="10" y="34" text-anchor="start" font-size="8" fill="#888" font-family="-apple-system, BlinkMacSystemFont, sans-serif">ABR 20:00</text><text x="310" y="34" text-anchor="end" font-size="8" fill="#888" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Conventional 01:00</text></svg></td></tr>
+<tr class="row-false-alarm"><td>2026-08-12</td><td>1.0x</td><td><span class="status-false_alarm">False alarm</span></td><td>&mdash;</td></tr>
 
           </tbody>
         </table>
@@ -848,22 +829,22 @@
         </div>
         <div class="stats-detail">
           <p>Total predictions: 48 &middot;
-             Verified: 13608 &middot;
-             Confirmed: 394 &middot;
-             False alarms: 4482 &middot;
+             Verified: 13656 &middot;
+             Confirmed: 397 &middot;
+             False alarms: 4507 &middot;
              Missed transitions: 0</p>
-          <div class="histogram-container"><p class="chart-label">Distribution of advance warning times</p><svg width="200" height="60" viewBox="0 0 200 60" role="img" aria-label="Histogram showing how far in advance the system detected weather changes. 394 verified predictions had lead times from 4.0 to 10.0 hours.">
+          <div class="histogram-container"><p class="chart-label">Distribution of advance warning times</p><svg width="200" height="60" viewBox="0 0 200 60" role="img" aria-label="Histogram showing how far in advance the system detected weather changes. 397 verified predictions had lead times from 4.0 to 10.0 hours.">
 <rect x="0" y="0" width="200" height="60" fill="#fafafa" rx="3"/>
 <rect x="6.0" y="55.0" width="15.3" height="0.0" fill="#2980b9" rx="1"/>
 <rect x="23.3" y="55.0" width="15.3" height="0.0" fill="#2980b9" rx="1"/>
 <rect x="40.5" y="55.0" width="15.3" height="0.0" fill="#2980b9" rx="1"/>
 <rect x="57.8" y="55.0" width="15.3" height="0.0" fill="#2980b9" rx="1"/>
-<rect x="75.1" y="32.3" width="15.3" height="22.7" fill="#2980b9" rx="1"/>
-<rect x="92.4" y="30.7" width="15.3" height="24.3" fill="#2980b9" rx="1"/>
-<rect x="109.6" y="53.4" width="15.3" height="1.6" fill="#2980b9" rx="1"/>
+<rect x="75.1" y="32.4" width="15.3" height="22.6" fill="#2980b9" rx="1"/>
+<rect x="92.4" y="30.6" width="15.3" height="24.4" fill="#2980b9" rx="1"/>
+<rect x="109.6" y="53.5" width="15.3" height="1.5" fill="#2980b9" rx="1"/>
 <rect x="126.9" y="55.0" width="15.3" height="0.0" fill="#2980b9" rx="1"/>
-<rect x="144.2" y="40.0" width="15.3" height="15.0" fill="#2980b9" rx="1"/>
-<rect x="161.5" y="33.8" width="15.3" height="21.2" fill="#2980b9" rx="1"/>
+<rect x="144.2" y="39.9" width="15.3" height="15.1" fill="#2980b9" rx="1"/>
+<rect x="161.5" y="34.0" width="15.3" height="21.0" fill="#2980b9" rx="1"/>
 <rect x="178.7" y="17.0" width="15.3" height="38.0" fill="#2980b9" rx="1"/>
 <text x="100.0" y="59" text-anchor="middle" font-size="9" fill="#666" font-family="-apple-system, BlinkMacSystemFont, sans-serif">Hours of advance warning</text>
 </svg></div>
@@ -930,7 +911,7 @@
   <details>
     <summary>Technical details</summary>
     <div class="details-content">
-      <p><strong>Raw &Delta;&Gamma; value:</strong> +7,611
+      <p><strong>Raw &Delta;&Gamma; value:</strong> -3,751
       (before normalization)</p>
       <p>The "relationship change index" shown on this dashboard is the
       normalized &Delta;&Gamma;: the raw change divided by the current
@@ -988,7 +969,7 @@
   <div class="footer">
     <p>Data: Iowa Environmental Mesonet / NOAA ASOS &amp; METAR
     &middot; Public domain</p>
-    <p>Last generated: 2026-08-12 11:56:07 UTC</p>
+    <p>Last generated: 2026-08-12 13:41:37 UTC</p>
     <p><a href="https://github.com/energyscholar/abr-weather-monitor"
       >Source on GitHub</a></p>
   </div>
@@ -1000,7 +981,7 @@
 (function() {
   var el = document.getElementById('freshness');
   if (!el) return;
-  var dataTime = '2026-08-12T10:00:00Z';
+  var dataTime = '2026-08-12T12:00:00Z';
   if (!dataTime) return;
   function update() {
     var t = new Date(dataTime);
