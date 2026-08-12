@@ -14719,3 +14719,4 @@
 {"type": "verify", "pred_id": "pred-202608090500-ca-socal-normalized", "status": "hit", "verified_at": "2026-08-12T04:57:23Z", "scalar_peak_time": "2026-08-09T15:00:00Z", "lead_hours": 10.0, "peak_indices": ["temp_change"]}
 {"type": "verify", "pred_id": "pred-202608100700-ca-socal-raw", "status": "hit", "verified_at": "2026-08-12T04:57:23Z", "scalar_peak_time": "2026-08-10T15:00:00Z", "lead_hours": 8.0, "peak_indices": ["temp_change", "humidity_change"]}
 {"type": "verify", "pred_id": "pred-202608102000-ca-socal-normalized", "status": "hit", "verified_at": "2026-08-12T04:57:23Z", "scalar_peak_time": "2026-08-11T01:00:00Z", "lead_hours": 5.0, "peak_indices": ["humidity_change", "dewpoint_depression_change"]}
+{"type": "obs", "data_time": "2026-08-12T06:40:13Z", "run_time": "2026-08-12T06:40:13Z", "n_stations": 0, "station_delta": 0, "dg_norm": 0.0, "dg_raw": 0.0, "threshold_norm": 0.0, "threshold_raw": 0.0, "gamma_norm": 0.0, "gamma_raw": 0.0}
