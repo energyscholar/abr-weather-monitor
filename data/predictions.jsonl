@@ -45476,3 +45476,4 @@
 {"type": "verify", "pred_id": "pred-202609192200-ca-socal-normalized", "status": "false_alarm", "verified_at": "2026-09-21T10:38:46Z", "scalar_peak_time": "", "lead_hours": 0.0, "peak_indices": []}
 {"type": "obs", "data_time": "2026-09-21T17:00:21Z", "run_time": "2026-09-21T17:00:21Z", "n_stations": 0, "station_delta": 0, "dg_norm": 0.0, "dg_raw": 0.0, "threshold_norm": 0.0, "threshold_raw": 0.0, "gamma_norm": 0.0, "gamma_raw": 0.0}
 {"type": "obs", "data_time": "2026-09-21T21:01:28Z", "run_time": "2026-09-21T21:01:28Z", "n_stations": 0, "station_delta": 0, "dg_norm": 0.0, "dg_raw": 0.0, "threshold_norm": 0.0, "threshold_raw": 0.0, "gamma_norm": 0.0, "gamma_raw": 0.0}
+{"type": "obs", "data_time": "2026-09-22T00:03:31Z", "run_time": "2026-09-22T00:03:31Z", "n_stations": 0, "station_delta": 0, "dg_norm": 0.0, "dg_raw": 0.0, "threshold_norm": 0.0, "threshold_raw": 0.0, "gamma_norm": 0.0, "gamma_raw": 0.0}
